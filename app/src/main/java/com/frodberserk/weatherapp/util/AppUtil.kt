@@ -7,7 +7,7 @@ class AppUtil {
 
     companion object {
         /**
-         * Appends two strings seperated with comma.
+         * Appends two strings separated with comma.
          *
          * @param s1 First string.
          * @param s2 Second string, can be null.

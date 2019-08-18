@@ -37,7 +37,9 @@ class WeatherApi {
      *  @return Request object for the http call.
      */
     fun getCityWeatherRequest(city: String, country: String = ""): Request {
+        //Append the city and country name
         val cityParam = AppUtil.appendWithComma(city, country)
+        //Pass the param into api and return the request object
         return PATH_WEATHER.httpGet(listOf(APPID to APPID, "q" to cityParam))
     }
 
