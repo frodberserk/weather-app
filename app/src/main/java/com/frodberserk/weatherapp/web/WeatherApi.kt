@@ -5,14 +5,23 @@ import com.github.kittinunf.fuel.core.Request
 import com.github.kittinunf.fuel.httpGet
 
 /**
- * This class can be used to access Open Weather API. It provides various methods to make connection
- * to the API. It uses FUEL library for making connections.
+ * Class to make HTTP requests to Open Weather API. It provides various methods to fetch data
+ * from the REST API using FUEL library.
  */
 class WeatherApi {
 
     companion object {
-        private const val BASE_URL = "http://api.openweathermap.org/data/2.5"   //Base Url for Open Weather API
-        private const val PATH_WEATHER = "/weather"                             //Path for the weather info
+        //Base Url for Open Weather API
+        private const val BASE_URL = "http://api.openweathermap.org/data/2.5"
+
+        //API Key for Open Weather API
+        private const val APPID = "ac94b4a082858e273dcd5236fc9694f1"
+
+        //Key for appid
+        private const val APPID_KEY = "appid"
+
+        //Paths for APIs
+        private const val PATH_WEATHER = "/weather"
     }
 
     init {
@@ -31,7 +40,7 @@ class WeatherApi {
             "" -> city
             else -> "$city,$country"
         }
-        return PATH_WEATHER.httpGet(listOf("q" to cityParam))
+        return PATH_WEATHER.httpGet(listOf(APPID to APPID, "q" to cityParam))
     }
 
 }
