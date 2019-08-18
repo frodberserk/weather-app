@@ -1,5 +1,6 @@
 package com.frodberserk.weatherapp.web
 
+import com.frodberserk.weatherapp.util.AppUtil
 import com.github.kittinunf.fuel.core.FuelManager
 import com.github.kittinunf.fuel.core.Request
 import com.github.kittinunf.fuel.httpGet
@@ -36,10 +37,7 @@ class WeatherApi {
      *  @return Request object for the http call.
      */
     fun getCityWeatherRequest(city: String, country: String = ""): Request {
-        val cityParam = when (country) {
-            "" -> city
-            else -> "$city,$country"
-        }
+        val cityParam = AppUtil.appendWithComma(city, country)
         return PATH_WEATHER.httpGet(listOf(APPID to APPID, "q" to cityParam))
     }
 
