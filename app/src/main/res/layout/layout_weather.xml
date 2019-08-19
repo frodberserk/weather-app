@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/parent_weather"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+    <TextView
+            android:id="@+id/textview_locationname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="City, Country"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="@id/parent_weather"
+            android:textColor="@android:color/black"
+            app:layout_constraintTop_toTopOf="@id/parent_weather"/>
+
+    <TextView
+            android:id="@+id/textview_temperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/textview_locationname"
+            app:layout_constraintLeft_toLeftOf="@id/parent_weather"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/colorAccent"
+            android:textSize="24sp"
+            android:text="@string/temperature_format"/>
+
+    <TextView
+            android:id="@+id/textview_weathertitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="@id/parent_weather"
+            app:layout_constraintTop_toBottomOf="@id/textview_temperature"
+            android:text="@string/weather"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"
+            android:textColor="@android:color/black"/>
+
+    <ImageView
+            android:id="@+id/imageview_weather"
+            app:layout_constraintTop_toBottomOf="@id/textview_weathertitle"
+            android:layout_width="24dp"
+            app:layout_constraintLeft_toLeftOf="@id/parent_weather"
+            android:layout_marginTop="8dp"
+            android:layout_height="24dp"/>
+
+    <TextView
+            android:id="@+id/textview_weather"
+            app:layout_constraintLeft_toRightOf="@id/imageview_weather"
+            app:layout_constraintTop_toTopOf="@id/imageview_weather"
+            android:layout_width="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_height="wrap_content"
+            android:text="@string/weather_format"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"/>
+
+
+</android.support.constraint.ConstraintLayout>
