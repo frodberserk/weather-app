@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 28
@@ -41,6 +41,8 @@ dependencies {
 
     //Other 3rd party libraries
     implementation "ru.terrakok.cicerone:cicerone:$cicerone_version"
+    implementation "com.google.dagger:dagger:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
 //    implementation "io.coil-kt:coil:$coil_version"
 
     //Testing

@@ -12,7 +12,8 @@ buildscript {
     ext.junit_version = '4.12'
     ext.testrunner_version = '1.0.2'
     ext.coil_version = '0.6.1'
-
+    ext.dagger_version = '2.24'
+    
     repositories {
         google()
         jcenter()
