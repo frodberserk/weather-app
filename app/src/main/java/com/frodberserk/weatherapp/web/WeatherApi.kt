@@ -9,33 +9,32 @@ import com.github.kittinunf.fuel.httpGet
  * Class to make HTTP requests to Open Weather API. It provides various methods to fetch data
  * from the REST API using FUEL library.
  */
-class WeatherApi {
 
-    companion object {
-        //Base Url for Open Weather API
-        private const val BASE_URL_API = "http://api.openweathermap.org/data/2.5"
+object WeatherApi {
 
-        //Base Url for weather images
-        private const val BASE_URL_IMAGES = "http://openweathermap.org/img/wn/"
-        private const val IMAGES_SUFFIX = "@2x.png"
+    //Base Url for Open Weather API
+    private const val BASE_URL_API = "http://api.openweathermap.org/data/2.5"
 
-        //API Key for Open Weather API
-        private const val APPID = "ac94b4a082858e273dcd5236fc9694f1"
+    //Base Url for weather images
+    private const val BASE_URL_IMAGES = "http://openweathermap.org/img/wn/"
+    private const val IMAGES_SUFFIX = "@2x.png"
 
-        //Key for appid
-        private const val APPID_KEY = "appid"
+    //API Key for Open Weather API
+    private const val APPID = "ac94b4a082858e273dcd5236fc9694f1"
 
-        //Paths for APIs
-        private const val PATH_WEATHER = "/weather"
+    //Key for appid
+    private const val APPID_KEY = "appid"
 
-        /**
-         * Returns image url for a weather condition.
-         *
-         * @param id String ID of the weather condition.
-         * @return Url of the image corresponding to the ID.
-         */
-        fun getWeatherImageUrl(id: String) = BASE_URL_IMAGES.plus(id).plus(IMAGES_SUFFIX)
-    }
+    //Paths for APIs
+    private const val PATH_WEATHER = "/weather"
+
+    /**
+     * Returns image url for a weather condition.
+     *
+     * @param id String ID of the weather condition.
+     * @return Url of the image corresponding to the ID.
+     */
+    fun getWeatherImageUrl(id: String) = BASE_URL_IMAGES.plus(id).plus(IMAGES_SUFFIX)
 
     init {
         //Configure Fuel Manager by adding base path
