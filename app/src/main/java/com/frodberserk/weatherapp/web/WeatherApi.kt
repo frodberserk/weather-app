@@ -12,9 +12,6 @@ import com.github.kittinunf.fuel.httpGet
 
 object WeatherApi {
 
-    //Base Url for HTTP requests
-    private const val BASE_URL_HTTP = "${WeatherConfig.BASE_URL}/data/2.5"
-
     //Paths for APIs
     private const val PATH_WEATHER = "/weather"
 
@@ -24,7 +21,7 @@ object WeatherApi {
 
     init {
         //Configure Fuel Manager by adding base path
-        FuelManager.instance.basePath = BASE_URL_HTTP
+        FuelManager.instance.basePath = WebConfig.WEATHER_API_BASEURL
     }
 
     /**
@@ -37,7 +34,7 @@ object WeatherApi {
         //Append the city and country name
         val cityParam = AppUtil.appendWithComma(city, country)
         //Pass the param into api and return the request object
-        return PATH_WEATHER.httpGet(listOf(KEY_APP_ID to WeatherConfig.APP_ID, KEY_QUERY to cityParam))
+        return PATH_WEATHER.httpGet(listOf(KEY_APP_ID to WebConfig.APP_ID, KEY_QUERY to cityParam))
     }
 
 }
