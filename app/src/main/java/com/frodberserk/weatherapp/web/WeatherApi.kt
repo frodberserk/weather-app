@@ -12,33 +12,19 @@ import com.github.kittinunf.fuel.httpGet
 
 object WeatherApi {
 
-    //Base Url for Open Weather API
-    private const val BASE_URL_API = "http://api.openweathermap.org/data/2.5"
-
-    //Base Url for weather images
-    private const val BASE_URL_IMAGES = "http://openweathermap.org/img/wn/"
-    private const val IMAGES_SUFFIX = "@2x.png"
-
-    //API Key for Open Weather API
-    private const val APPID = "ac94b4a082858e273dcd5236fc9694f1"
-
-    //Key for appid
-    private const val APPID_KEY = "appid"
+    //Base Url for HTTP requests
+    private const val BASE_URL_HTTP = "${WeatherConfig.BASE_URL}/data/2.5"
 
     //Paths for APIs
     private const val PATH_WEATHER = "/weather"
 
-    /**
-     * Returns image url for a weather condition.
-     *
-     * @param id String ID of the weather condition.
-     * @return Url of the image corresponding to the ID.
-     */
-    fun getWeatherImageUrl(id: String) = BASE_URL_IMAGES.plus(id).plus(IMAGES_SUFFIX)
+    //Keys
+    private const val KEY_APP_ID = "appid"
+    private const val KEY_QUERY = "q"
 
     init {
         //Configure Fuel Manager by adding base path
-        FuelManager.instance.basePath = BASE_URL_API
+        FuelManager.instance.basePath = BASE_URL_HTTP
     }
 
     /**
@@ -51,7 +37,7 @@ object WeatherApi {
         //Append the city and country name
         val cityParam = AppUtil.appendWithComma(city, country)
         //Pass the param into api and return the request object
-        return PATH_WEATHER.httpGet(listOf(APPID to APPID, "q" to cityParam))
+        return PATH_WEATHER.httpGet(listOf(KEY_APP_ID to WeatherConfig.APP_ID, KEY_QUERY to cityParam))
     }
 
 }
