@@ -1,8 +1,8 @@
 package com.frodberserk.weatherapp.view.activities
 
 import android.os.Bundle
-import android.support.v7.widget.Toolbar
 import android.view.View
+import androidx.appcompat.widget.Toolbar
 import com.frodberserk.weatherapp.MainContract
 import com.frodberserk.weatherapp.R
 import com.frodberserk.weatherapp.di.components.DaggerMainComponent
@@ -135,5 +135,11 @@ class MainActivity : BaseActivity(), MainContract.View {
         labelTemperature.text = String.format(
             getString(R.string.temperature_format, AppUtil.kelvinToCelsius(data.main?.temp))
         )
+
+        //Sets the image
+//        data.weather?.get(0)?.icon?.let {
+//            imageWeather.load(WeatherImageUtil.getWeatherImageUrl(it))
+//        }
+
     }
 }
