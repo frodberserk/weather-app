@@ -58,7 +58,7 @@ dependencies {
     implementation "ru.terrakok.cicerone:cicerone:$cicerone_version"
     implementation "com.google.dagger:dagger:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
-//    implementation "io.coil-kt:coil:$coil_version"
+    implementation "io.coil-kt:coil:$coil_version"
 
     //Testing
     testImplementation "junit:junit:$junit_version"

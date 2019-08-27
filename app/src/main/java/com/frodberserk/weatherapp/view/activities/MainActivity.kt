@@ -3,12 +3,14 @@ package com.frodberserk.weatherapp.view.activities
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.widget.Toolbar
+import coil.api.load
 import com.frodberserk.weatherapp.MainContract
 import com.frodberserk.weatherapp.R
 import com.frodberserk.weatherapp.di.components.DaggerMainComponent
 import com.frodberserk.weatherapp.entity.CityWeather
 import com.frodberserk.weatherapp.presenter.MainPresenter
 import com.frodberserk.weatherapp.util.AppUtil
+import com.frodberserk.weatherapp.web.WeatherImageUtil
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.layout_toolbar.*
 import kotlinx.android.synthetic.main.layout_weather.*
@@ -137,9 +139,9 @@ class MainActivity : BaseActivity(), MainContract.View {
         )
 
         //Sets the image
-//        data.weather?.get(0)?.icon?.let {
-//            imageWeather.load(WeatherImageUtil.getWeatherImageUrl(it))
-//        }
+        data.weather?.get(0)?.icon?.let {
+            imageWeather.load(WeatherImageUtil.getWeatherImageUrl(it))
+        }
 
     }
 }
