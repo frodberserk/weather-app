@@ -24,8 +24,8 @@
         <EditText
                 android:id="@+id/edittext_city"
                 android:layout_width="match_parent"
+                android:lines="1"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
                 android:hint="@string/city"/>
     </android.support.design.widget.TextInputLayout>
 
@@ -42,10 +42,22 @@
                 android:id="@+id/edittext_country"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:hint="@string/country"/>
+                android:hint="@string/country"
+                android:lines="1"/>
 
     </android.support.design.widget.TextInputLayout>
+
+    <Button
+            android:id="@+id/button_getweather"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/get_weather_details"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintLeft_toLeftOf="@id/parent"
+            app:layout_constraintRight_toRightOf="@id/parent"
+            app:layout_constraintTop_toBottomOf="@id/input_country"/>
 
     <ProgressBar
             android:id="@+id/progressbar_loader"
@@ -54,7 +66,7 @@
             app:layout_constraintLeft_toLeftOf="@id/parent"
             app:layout_constraintRight_toRightOf="@id/parent"
             app:layout_constraintBottom_toBottomOf="@id/parent"
-            app:layout_constraintTop_toBottomOf="@id/input_country"/>
+            app:layout_constraintTop_toBottomOf="@id/button_getweather"/>
 
     <include
             android:layout_width="match_parent"
@@ -63,6 +75,6 @@
             app:layout_constraintLeft_toLeftOf="@id/parent"
             app:layout_constraintRight_toRightOf="@id/parent"
             android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@id/input_country"/>
+            app:layout_constraintTop_toBottomOf="@id/button_getweather"/>
 
 </android.support.constraint.ConstraintLayout>

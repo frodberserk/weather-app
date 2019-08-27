@@ -8,11 +8,9 @@ import android.support.v7.widget.Toolbar
  */
 abstract class BaseActivity : AppCompatActivity() {
 
-    /**
-     * Toolbar added for the activities.
-     */
     override fun onStart() {
         super.onStart()
+        //Toolbar added for the activities.
         setSupportActionBar(getToolbarInstance())
     }
 
