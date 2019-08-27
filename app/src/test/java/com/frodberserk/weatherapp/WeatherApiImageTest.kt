@@ -14,7 +14,7 @@ class WeatherApiImageTest {
     fun test_getWeatherImageUrl() {
         WeatherImageUtil.getWeatherImageUrl("01n").let {
             println(it)
-            assert(it == "http://openweathermap.org/img/wn/01n@2x.png")
+            assert(it == "https://openweathermap.org/img/wn/01n@2x.png")
         }
     }
 
@@ -25,7 +25,7 @@ class WeatherApiImageTest {
             Charsets.UTF_8.toString()
         ).let {
             println(it)
-            assert(it == "http://api.openweathermap.org/data/2.5/weather?appid=ac94b4a082858e273dcd5236fc9694f1&q=Sangrur,India")
+            assert(it == "https://api.openweathermap.org/data/2.5/weather?appid=ac94b4a082858e273dcd5236fc9694f1&q=Sangrur,India")
         }
 
     }
