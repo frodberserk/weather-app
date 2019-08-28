@@ -1,6 +1,5 @@
 package com.frodberserk.weatherapp.di.components
 
-import com.frodberserk.weatherapp.di.modules.MainModule
 import com.frodberserk.weatherapp.presenter.MainPresenter
 import com.frodberserk.weatherapp.view.activities.MainActivity
 import dagger.Component
@@ -8,7 +7,7 @@ import dagger.Component
 /**
  * Dagger component interface for MainActivity.
  */
-@Component(modules = [MainModule::class])
+@Component
 interface MainComponent {
 
     /**

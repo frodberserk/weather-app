@@ -10,13 +10,11 @@ import javax.inject.Inject
 /**
  * Presenter class for MainActivity. Implements MainContract.Presenter interface.
  *
- * @param view Instance of MainContract.View.
+ * @param interactor Instance of MainInteractor.
  */
-class MainPresenter @Inject constructor() : BasePresenter<MainContract.View>(), MainContract.Presenter,
+class MainPresenter @Inject constructor(var interactor: MainInteractor?) : BasePresenter<MainContract.View>(),
+    MainContract.Presenter,
     MainContract.InteractorOutput {
-
-    //Interactor
-    var interactor = MainInteractor()
 
     /**
      * Initializes the view.
@@ -48,7 +46,7 @@ class MainPresenter @Inject constructor() : BasePresenter<MainContract.View>(), 
             view?.showProgress()
 
             //Fetch data from interactor
-            interactor.fetchWeather(city, country) { result ->
+            interactor?.fetchWeather(city, country) { result ->
 
                 //Hide loader
                 view?.hideProgress()

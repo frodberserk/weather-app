@@ -6,8 +6,9 @@ import com.frodberserk.weatherapp.web.WeatherApi
 import com.github.kittinunf.fuel.core.FuelError
 import com.github.kittinunf.fuel.gson.responseObject
 import com.github.kittinunf.result.Result
+import javax.inject.Inject
 
-class MainInteractor : MainContract.Interactor {
+class MainInteractor @Inject constructor() : MainContract.Interactor {
     override fun fetchWeather(
         city: String,
         country: String?,
